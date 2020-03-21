@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :name, :email
+  #attr_accessor :name, :email
 
   has_many :microposts
 
@@ -10,10 +10,10 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: {maximum: 8}
 
-  def initialize(attributes = {})
-    @name = attributes[:name]
-    @email = attributes[:email]
-  end
+  # def initialize(attributes = {})
+  #   @name = attributes[:name]
+  #   @email = attributes[:email]
+  # end
 
   def formatter_email
     "#{@name} <#{@email}>"
